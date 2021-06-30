@@ -56,10 +56,6 @@ cat tumourBam | grep $SAMPLENAME > tumourBamList
 
         done < 'lettersSeq'
 
-    rm ${TUMOURID}_v.seqz.gz
-	rm ${TUMOURID}_v.seqz.gz.tbi
-    rm *_chr*
-
 
 	echo '[INFO] binning ' $TUMOURID ' file...'
 
