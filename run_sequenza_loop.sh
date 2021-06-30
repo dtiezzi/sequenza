@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REFGENOMEDIR='/mnt/md0/Bam_files/Perou/wxs/refGenome'
+REFGENOMEDIR='/path/to/referenceGenome'
 
 while read -r NORMAL;
 do
