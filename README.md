@@ -3,13 +3,17 @@ Shell script to run the sequenza pipeline over multiple samples
 
 ### How to run:
 
-The normalBam e tumourBam files are tab separated one where 1st column stands for the BAM file prefix and the 2nd column is the sample name or ID.
+The normalBam e tumourBam files are tab separated one where 1<sup>st</sup> column stands for the BAM file prefix and the 2<sup>nd</sup> column is the sample name or ID.
 
 ```bash
 ./run_sequenza_loop.sh normalBam tumourBam 1
 ```
 
-Note the 3rd argument is useful if you are running multiple jobs in parallel.
+Note the 3<sup>rd</sup> argument is useful if you are running multiple jobs in parallel. In this case, you can split your normalBam file into as many as you want:
+
+```bash
+split -n l/N normalBam <prefix> # N = number of subfiles to be split
+```
 
 If you are running the pipeline in a low RAM memory machine, you can use the `run_sequenza_loop_low_ram.sh` script. In this cases, the script runs every file in parallel, spliting it in 23 processes. So, if you are using a machine with limited cores, I recomend you to edit the script to avoid the loop running the processes in parallel. 
 
