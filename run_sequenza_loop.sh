@@ -12,7 +12,7 @@ echo '[INFO] sorting ' ${NORMALID} ' file...'
 samtools sort -@ 8 ${NORMALID}.bam > ${NORMALID}_S.bam
 samtools index -@ 8 ${NORMALID}_S.bam ${NORMALID}_S.bai
 
-cat tumourBam | grep $SAMPLENAME > tumourBamList
+cat $2 | grep $SAMPLENAME > tumourBamList_$3
 
 	while read -r TUMOUR;
 	do
@@ -37,8 +37,8 @@ cat tumourBam | grep $SAMPLENAME > tumourBamList
 
 	echo '[INFO] ' $TUMOURID ' file analyses DONE!'
 
-	done < 'tumourBamList'
+	done < tumourBamList_$3
     
 echo '[INFO] ' $SAMPLENAME ' files analyses DONE!'
 
-done < 'normalBam'
+done < $1
