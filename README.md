@@ -1,5 +1,6 @@
 # sequenza
-Shell script to run the sequenza pipeline over multiple samples
+
+This is a shell script to run the sequenza pipeline over multiple samples
 
 ### How to run:
 
@@ -15,7 +16,7 @@ Note the 3<sup>rd</sup> argument is useful if you are running multiple jobs in p
 split -n l/N normalBam <prefix> # N = number of subfiles to be split
 ```
 
-If you are running the pipeline in a low RAM memory machine, you can use the `run_sequenza_loop_low_ram.sh` script. In this cases, the script runs every file in parallel, spliting it in 23 processes. So, if you are using a machine with limited cores, I recomend you to edit the script to avoid the loop running the processes in parallel. 
+If you are running the pipeline in a low RAM memory machine, you can use the `run_sequenza_loop_low_ram.sh` script. In this case, the script runs every file in parallel, splitting it in 23 processes. So, if you are using a machine with limited cores, it’s recommended you to edit the script to avoid the loop running the processes in parallel.
 
 The following code is how to run the for loop sequentially:
 
