@@ -13,7 +13,7 @@ echo '[INFO] sorting ' ${NORMALID} ' file...'
 samtools sort -@ 8 ${NORMALID}.bam > ${NORMALID}_S.bam
 samtools index -@ 8 ${NORMALID}_S.bam ${NORMALID}_S.bai
 
-cat tumourBam | grep $SAMPLENAME > tumourBamList
+cat tumourBam | grep -w $SAMPLENAME > tumourBamList
 
 	while read -r TUMOUR;
 	do
